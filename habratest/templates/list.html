@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Habra rating</title>
+    </head>
+    <body>
+        <ol>
+            {% for voteitem in object_list %}
+            <li id="{{voteitem.pk}}"><a href="{{ voteitem.url }}">{{ voteitem.url }}</a>
+             | Rating:{{voteitem.rating}}
+             | <a href={% url 'addvote' voteitem.pk %}>+<a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
